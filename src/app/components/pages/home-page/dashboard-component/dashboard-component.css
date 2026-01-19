@@ -1,0 +1,119 @@
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #DC143C;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: #DC143C;
+}
+
+.search-section {
+  margin-bottom: 24px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-results {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background-color: rgba(220, 20, 60, 0.05);
+  border-left: 3px solid #DC143C;
+  border-radius: 4px;
+}
+
+.search-results p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.search-results strong {
+  color: #DC143C;
+  font-weight: 600;
+}
+
+.content-section {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .dashboard-title {
+    font-size: 20px;
+  }
+
+  .title-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .search-section {
+    padding: 12px;
+  }
+
+  .content-section {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+/* Tablet - 3 columnas */
+@media (min-width: 601px) and (max-width: 959px) {
+  .content-section {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 18px;
+    gap: 14px;
+  }
+}
+
+/* Desktop pequeño - 4 columnas */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .content-section {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    gap: 16px;
+  }
+}
+
+/* Desktop grande - 5 columnas */
+@media (min-width: 1280px) {
+  .content-section {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 24px;
+    gap: 16px;
+  }
+}

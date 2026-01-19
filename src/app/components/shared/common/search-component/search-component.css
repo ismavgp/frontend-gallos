@@ -1,0 +1,64 @@
+.search-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-field {
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 8px;
+}
+
+.clear-btn {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.clear-btn:hover {
+  color: #DC143C;
+}
+
+/* Estilos para mat-form-field outline */
+::ng-deep .search-field.mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+  padding-left: 0;
+}
+
+::ng-deep .search-field .mat-mdc-form-field-focus-overlay {
+  background-color: transparent;
+}
+
+::ng-deep .search-field.mat-focused .mdc-notched-outline__leading,
+::ng-deep .search-field.mat-focused .mdc-notched-outline__notch,
+::ng-deep .search-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: #DC143C !important;
+}
+
+::ng-deep .search-field.mat-focused .search-icon {
+  color: #DC143C;
+}
+
+/* Estilos para mat-form-field fill */
+::ng-deep .search-field.mat-form-field-appearance-fill .mat-mdc-text-field-wrapper {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+::ng-deep .search-field.mat-form-field-appearance-fill.mat-focused .mat-mdc-text-field-wrapper {
+  background-color: rgba(220, 20, 60, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-field {
+    font-size: 13px;
+  }
+  
+  .search-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}

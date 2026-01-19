@@ -1,0 +1,16 @@
+<button
+  mat-raised-button
+  [class]="buttonClass"
+  [style.background-color]="backgroundColor"
+  [style.color]="textColor"
+  [disabled]="disabled"
+  (click)="onClick()"
+  matRipple
+>
+  @if (icon) {
+    <mat-icon class="button-icon">{{ icon }}</mat-icon>
+  }
+  @if (text) {
+    <span class="button-text">{{ text }}</span>
+  }
+</button>

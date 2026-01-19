@@ -1,23 +1,43 @@
 <nav class="sidebar">
 
   <div class="logo">
-    <mat-icon>dashboard</mat-icon>
-    <span>Admin</span>
+    <span class="logo-icon">🐓</span>
+    <div class="logo-text">
+      <span class="logo-title">Mi Perfil</span>
+      <span class="logo-subtitle">Es Premium</span>
+    </div>
+    <button mat-icon-button class="close-btn" (click)="closeSidebar()">
+      <mat-icon>close</mat-icon>
+    </button>
   </div>
 
-  <a mat-button routerLink="/home" routerLinkActive="active">
-    <mat-icon>home</mat-icon>
-    Inicio
+  <div class="divider"></div>
+
+  <a mat-button routerLink="/home/account/profile" routerLinkActive="active" (click)="closeSidebar()">
+    <mat-icon>person</mat-icon>
+    <span>Mi Perfil</span>
   </a>
 
-  <a mat-button routerLink="/users" routerLinkActive="active">
-    <mat-icon>group</mat-icon>
-    Usuarios
+  <a mat-button routerLink="/home/account/password-change" routerLinkActive="active" (click)="closeSidebar()">
+    <mat-icon>lock</mat-icon>
+    <span>Cambiar Contraseña</span>
   </a>
 
-  <a mat-button routerLink="/settings" routerLinkActive="active">
+  <a mat-button routerLink="/home/account/payment-methods" routerLinkActive="active" (click)="closeSidebar()">
+    <mat-icon>payment</mat-icon>
+    <span>Formas de Pago</span>
+  </a>
+
+  <div class="divider"></div>
+
+  <a mat-button routerLink="/home/account/settings" routerLinkActive="active" (click)="closeSidebar()">
     <mat-icon>settings</mat-icon>
-    Configuración
+    <span>Configuración</span>
+  </a>
+
+  <a mat-button class="logout-btn" routerLink="/login" (click)="closeSidebar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar Sesión</span>
   </a>
 
 </nav>

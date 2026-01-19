@@ -1,1 +1,28 @@
-<p>dashboard-component works!</p>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1 class="dashboard-title">
+            <mat-icon class="title-icon">dashboard</mat-icon>
+            Dashboard - Gallos
+        </h1>
+    </div>
+
+    <div class="search-section">
+        <app-search-component placeholder="Buscar por placa" [debounceTime]="400" appearance="outline" icon="search"
+            (search)="onSearch($event)" (clear)="onClear()">
+        </app-search-component>
+    </div>
+
+    @if (searchTerm()) {
+    <div class="search-results">
+        <p>Buscando: <strong>{{ searchTerm() }}</strong></p>
+    </div>
+    }
+
+    <div class="content-section">
+
+      @for (item of [].constructor(20); track $index) {
+        <app-item-resume-component></app-item-resume-component>
+      }
+
+    </div>
+</div>

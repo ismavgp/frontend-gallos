@@ -1,25 +1,24 @@
 <mat-toolbar color="primary" class="header">
 
-  <!-- Botón menú (solo mobile) -->
+  <!-- Icono de usuario a la izquierda -->
   <button
     mat-icon-button
-    class="menu-btn"
+    class="user-btn"
     (click)="toggle.emit()"
   >
-    <mat-icon>menu</mat-icon>
+    <mat-icon>account_circle</mat-icon>
   </button>
 
-  <span class="title">Mi Aplicación</span>
+  <div class="brand" (click)="goToHome()">
+    <span class="brand-icon">🐓</span>
+    <span class="title"> Sistema de Gallos</span>
+  </div>
 
   <span class="spacer"></span>
 
   <!-- Acciones -->
-  <button mat-icon-button>
+  <button mat-icon-button class="action-btn">
     <mat-icon>notifications</mat-icon>
-  </button>
-
-  <button mat-icon-button>
-    <mat-icon>account_circle</mat-icon>
   </button>
 
 </mat-toolbar>

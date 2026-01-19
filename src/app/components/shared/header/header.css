@@ -2,25 +2,104 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #DC143C 100%) !important;
+  box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
+  height: 56px;
+  padding: 0 8px;
+}
+
+.user-btn {
+  color: white;
+  margin-right: 8px;
+  width: 44px;
+  height: 44px;
+}
+
+.user-btn mat-icon {
+  color: rgba(255, 215, 0, 0.9);
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.9;
+}
+
+.brand-icon {
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.4));
 }
 
 .title {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 .spacer {
   flex: 1;
 }
 
-/* Mobile first */
-.menu-btn {
-  display: inline-flex;
+.action-btn {
+  color: white;
+  width: 44px;
+  height: 44px;
+}
+
+.action-btn mat-icon {
+  color: rgba(255, 215, 0, 0.9);
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .header {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .brand-icon {
+    font-size: 28px;
+  }
+
+  .user-btn mat-icon,
+  .action-btn mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Desktop */
 @media (min-width: 960px) {
-  .menu-btn {
-    display: none;
+  .title {
+    font-size: 20px;
+  }
+
+  .brand-icon {
+    font-size: 32px;
+  }
+
+  .user-btn mat-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
   }
 }

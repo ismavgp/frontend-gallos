@@ -1,0 +1,156 @@
+<div class="register-container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <div class="register-header">
+        <div class="logo-container">
+          <span class="logo-icon">🐓</span>
+        </div>
+        <h1 class="register-title">Crear Cuenta</h1>
+        <p class="register-subtitle">Registra tu gallera</p>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+        <!-- Nombre Gallera -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nombre / Gallera</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="gallera"
+            placeholder="Mi Gallera"
+            autocomplete="organization"
+          />
+          <mat-icon matPrefix>home</mat-icon>
+          @if (getErrorMessage('gallera')) {
+            <mat-error>{{ getErrorMessage('gallera') }}</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="ejemplo@correo.com"
+            autocomplete="email"
+          />
+          <mat-icon matPrefix>email</mat-icon>
+          @if (getErrorMessage('email')) {
+            <mat-error>{{ getErrorMessage('email') }}</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Teléfono -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Teléfono</mat-label>
+          <input
+            matInput
+            type="tel"
+            formControlName="telefono"
+            placeholder="1234567890"
+            autocomplete="tel"
+            maxlength="10"
+          />
+          <mat-icon matPrefix>phone</mat-icon>
+          @if (getErrorMessage('telefono')) {
+            <mat-error>{{ getErrorMessage('telefono') }}</mat-error>
+          }
+          <mat-hint>10 dígitos sin espacios</mat-hint>
+        </mat-form-field>
+
+        <!-- Contraseña -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            [type]="hidePassword() ? 'password' : 'text'"
+            formControlName="password"
+            placeholder="Mínimo 6 caracteres"
+            autocomplete="new-password"
+          />
+          <mat-icon matPrefix>lock</mat-icon>
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="'Ocultar contraseña'"
+            [attr.aria-pressed]="!hidePassword()"
+          >
+            <mat-icon>{{ hidePassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          @if (getErrorMessage('password')) {
+            <mat-error>{{ getErrorMessage('password') }}</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Confirmar Contraseña -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirmar Contraseña</mat-label>
+          <input
+            matInput
+            [type]="hideConfirmPassword() ? 'password' : 'text'"
+            formControlName="confirmPassword"
+            placeholder="Repite tu contraseña"
+            autocomplete="new-password"
+          />
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <button
+            mat-icon-button
+            matSuffix
+            type="button"
+            (click)="toggleConfirmPasswordVisibility()"
+            [attr.aria-label]="'Ocultar contraseña'"
+            [attr.aria-pressed]="!hideConfirmPassword()"
+          >
+            <mat-icon>{{ hideConfirmPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          @if (getErrorMessage('confirmPassword')) {
+            <mat-error>{{ getErrorMessage('confirmPassword') }}</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Success Message -->
+        @if (successMessage()) {
+          <div class="success-banner">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{ successMessage() }}</span>
+          </div>
+        }
+
+        <!-- Error Message -->
+        @if (errorMessage()) {
+          <div class="error-banner">
+            <mat-icon>error_outline</mat-icon>
+            <span>{{ errorMessage() }}</span>
+          </div>
+        }
+
+        <!-- Submit Button -->
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="submit-button"
+          [disabled]="isLoading()"
+        >
+          @if (isLoading()) {
+            <mat-spinner diameter="20"></mat-spinner>
+            <span>Registrando...</span>
+          } @else {
+            <span>Registrarse</span>
+          }
+        </button>
+
+        <!-- Login Link -->
+        <div class="login-link">
+          <p>¿Ya tienes una cuenta? <a href="#" (click)="goToLogin(); $event.preventDefault()">Inicia sesión</a></p>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
