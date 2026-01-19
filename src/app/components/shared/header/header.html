@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="header">
+
+  <!-- Botón menú (solo mobile) -->
+  <button
+    mat-icon-button
+    class="menu-btn"
+    (click)="toggle.emit()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="title">Mi Aplicación</span>
+
+  <span class="spacer"></span>
+
+  <!-- Acciones -->
+  <button mat-icon-button>
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+</mat-toolbar>

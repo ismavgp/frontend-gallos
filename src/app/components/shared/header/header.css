@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Mobile first */
+.menu-btn {
+  display: inline-flex;
+}
+
+/* Desktop */
+@media (min-width: 960px) {
+  .menu-btn {
+    display: none;
+  }
+}
