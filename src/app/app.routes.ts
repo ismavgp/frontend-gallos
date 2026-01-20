@@ -14,11 +14,12 @@ import { SettingsPage } from './components/pages/account/settings-page/settings-
 import { GallosComponent } from './components/pages/home-page/gallos/gallos-component';
 import { GalloFormComponent } from './components/pages/home-page/gallos/gallo-form/gallo-form';
 import { GalloDetailComponent } from './components/pages/home-page/gallos/gallo-detail/gallo-detail';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'login',
         pathMatch: 'full'
     },
     {
@@ -32,6 +33,7 @@ export const routes: Routes = [
     {
         path: 'home',
         component: HomePageComponent,
+        canActivate: [authGuard],
         children: [
             {
 
