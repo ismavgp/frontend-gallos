@@ -1,0 +1,77 @@
+<div class="gallos-container">
+    <div class="gallos-header">
+        <h1 class="gallos-title">
+            <mat-icon class="title-icon">pets</mat-icon>
+            Mis Gallos
+        </h1>
+    </div>
+
+    <div class="search-section">
+        <app-search-component placeholder="Buscar por placa" [debounceTime]="400" appearance="outline" icon="search"
+            (search)="onSearch($event)" (clear)="onClear()">
+        </app-search-component>
+    </div>
+
+    @if (searchTerm()) {
+    <div class="search-results">
+        <p>Buscando: <strong>{{ searchTerm() }}</strong></p>
+    </div>
+    }
+
+    <div class="actions-section">
+        <app-button-component 
+            text="Nuevo" 
+            label="Agregar nuevo gallo" 
+            appearance="raised" 
+            color="primary" 
+            icon="add"
+            (click)="onAddNewGallo()">
+        </app-button-component>
+    </div>
+
+    @if (loading()) {
+    <div class="loading-message">
+        <mat-icon class="loading-icon">autorenew</mat-icon>
+        <p>Cargando gallos...</p>
+    </div>
+    }
+
+    @if (!loading() && filteredGallos().length === 0) {
+    <div class="empty-message">
+        <mat-icon class="empty-icon">search_off</mat-icon>
+        <h3>No se encontraron gallos</h3>
+        <p>{{ searchTerm() ? 'Intenta con otro término de búsqueda' : 'Agrega tu primer gallo' }}</p>
+    </div>
+    }
+
+    @if (!loading() && filteredGallos().length > 0) {
+    <div class="content-section">
+      @for (gallo of filteredGallos(); track gallo.placa) {
+        <div class="gallo-card" (click)="onGalloClick(gallo.placa)">
+          @if (gallo.url_foto) {
+          <div class="card-photo">
+            <img [src]="gallo.url_foto" [alt]="gallo.nombre">
+          </div>
+          }
+          <div class="card-header">
+            <mat-icon class="card-icon">pets</mat-icon>
+            <span class="card-placa">{{ gallo.placa }}</span>
+          </div>
+          <h3 class="card-nombre">{{ gallo.nombre }}</h3>
+          <div class="card-details">
+            <span class="card-detail">
+              <mat-icon>wc</mat-icon>
+              {{ gallo.sexo }}
+            </span>
+            @if (gallo.color) {
+            <span class="card-detail">
+              <mat-icon>palette</mat-icon>
+              {{ gallo.color }}
+            </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+    }
+</div>

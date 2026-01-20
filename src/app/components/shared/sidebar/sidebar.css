@@ -108,18 +108,18 @@ a:hover mat-icon {
 }
 
 a.active {
-  background-color: rgba(220, 20, 60, 0.1);
-  color: #DC143C !important;
+  background-color: #DC143C;
+  color: white !important;
   font-weight: 600;
-  border-left-color: #DC143C;
+  border-left-color: #8B0000;
 }
 
 a.active span {
-  color: #DC143C;
+  color: white;
 }
 
 a.active mat-icon {
-  color: #DC143C !important;
+  color: white !important;
 }
 
 .logout-btn {

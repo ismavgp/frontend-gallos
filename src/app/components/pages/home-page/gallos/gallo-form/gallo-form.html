@@ -1,0 +1,159 @@
+<div class="gallo-form-container">
+  <div class="form-header">
+    <button mat-icon-button (click)="goBack()" class="back-button">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1 class="form-title">
+      <mat-icon class="title-icon">{{ isEditMode() ? 'edit' : 'add' }}</mat-icon>
+      {{ isEditMode() ? 'Editar Gallo' : 'Nuevo Gallo' }}
+    </h1>
+  </div>
+
+  <form [formGroup]="galloForm" (ngSubmit)="onSubmit()" class="gallo-form">
+    
+    <div class="form-section">
+      <h2 class="section-title">Información Básica</h2>
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Placa</mat-label>
+        <input matInput formControlName="placa" placeholder="Ej: GAL-001" required>
+        <mat-icon matPrefix>qr_code</mat-icon>
+        @if (galloForm.get('placa')?.hasError('required') && galloForm.get('placa')?.touched) {
+          <mat-error>La placa es requerida</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" placeholder="Ej: Relámpago" required>
+        <mat-icon matPrefix>pets</mat-icon>
+        @if (galloForm.get('nombre')?.hasError('required') && galloForm.get('nombre')?.touched) {
+          <mat-error>El nombre es requerido</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo" required>
+          <mat-option value="Macho">Macho</mat-option>
+          <mat-option value="Hembra">Hembra</mat-option>
+        </mat-select>
+        <mat-icon matPrefix>wc</mat-icon>
+        @if (galloForm.get('sexo')?.hasError('required') && galloForm.get('sexo')?.touched) {
+          <mat-error>El sexo es requerido</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput type="date" formControlName="fecha_nacimiento">
+        <mat-icon matPrefix>calendar_today</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>URL de Foto</mat-label>
+        <input matInput formControlName="url_foto" placeholder="https://ejemplo.com/foto.jpg">
+        <mat-icon matPrefix>photo_camera</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-section">
+      <h2 class="section-title">Características Físicas</h2>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Color</mat-label>
+        <input matInput formControlName="color" placeholder="Ej: Rojo con negro">
+        <mat-icon matPrefix>palette</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Peso</mat-label>
+        <input matInput formControlName="peso" placeholder="Ej: 2.5 kg">
+        <mat-icon matPrefix>monitor_weight</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Talla</mat-label>
+        <mat-select formControlName="talla">
+          <mat-option value="Pequeño">Pequeño</mat-option>
+          <mat-option value="Mediano">Mediano</mat-option>
+          <mat-option value="Grande">Grande</mat-option>
+        </mat-select>
+        <mat-icon matPrefix>straighten</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Color de Patas</mat-label>
+        <input matInput formControlName="color_patas" placeholder="Ej: Amarillo">
+        <mat-icon matPrefix>colorize</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Tipo de Cresta</mat-label>
+        <mat-select formControlName="tipo_cresta">
+          <mat-option value="Simple">Simple</mat-option>
+          <mat-option value="Rosa">Rosa</mat-option>
+          <mat-option value="Nuez">Nuez</mat-option>
+          <mat-option value="Guisante">Guisante</mat-option>
+        </mat-select>
+        <mat-icon matPrefix>landscape</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-section">
+      <h2 class="section-title">Información Genealógica</h2>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Placa del Padre</mat-label>
+        <input 
+          matInput 
+          formControlName="placa_padre" 
+          placeholder="Buscar por placa o nombre"
+          [matAutocomplete]="autoPadre">
+        <mat-icon matPrefix>male</mat-icon>
+        <mat-autocomplete #autoPadre="matAutocomplete" [displayWith]="displayGallo.bind(this)">
+          @for (gallo of filteredPadres | async; track gallo.placa) {
+            <mat-option [value]="gallo.placa">
+              <div class="autocomplete-option">
+                <span class="option-placa">{{ gallo.placa }}</span>
+                <span class="option-nombre">{{ gallo.nombre }}</span>
+              </div>
+            </mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Placa de la Madre</mat-label>
+        <input 
+          matInput 
+          formControlName="placa_madre" 
+          placeholder="Buscar por placa o nombre"
+          [matAutocomplete]="autoMadre">
+        <mat-icon matPrefix>female</mat-icon>
+        <mat-autocomplete #autoMadre="matAutocomplete" [displayWith]="displayGallo.bind(this)">
+          @for (gallo of filteredMadres | async; track gallo.placa) {
+            <mat-option [value]="gallo.placa">
+              <div class="autocomplete-option">
+                <span class="option-placa">{{ gallo.placa }}</span>
+                <span class="option-nombre">{{ gallo.nombre }}</span>
+              </div>
+            </mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button type="button" (click)="goBack()" class="cancel-button">
+        <mat-icon>cancel</mat-icon>
+        Cancelar
+      </button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!galloForm.valid || isSubmitting()">
+        <mat-icon>{{ isEditMode() ? 'save' : 'add' }}</mat-icon>
+        {{ isSubmitting() ? 'Guardando...' : (isEditMode() ? 'Guardar' : 'Crear') }}
+      </button>
+    </div>
+
+  </form>
+</div>

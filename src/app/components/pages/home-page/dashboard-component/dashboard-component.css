@@ -54,6 +54,14 @@
   font-weight: 600;
 }
 
+.actions-section {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+}
+
 .content-section {
   background: white;
   padding: 16px;
@@ -89,7 +97,13 @@
     padding: 12px;
     gap: 10px;
   }
+  .actions-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 }
+
 
 /* Tablet - 3 columnas */
 @media (min-width: 601px) and (max-width: 959px) {
@@ -117,3 +131,4 @@
     gap: 16px;
   }
 }
+

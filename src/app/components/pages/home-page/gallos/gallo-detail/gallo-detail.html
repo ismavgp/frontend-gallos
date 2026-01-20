@@ -1,0 +1,169 @@
+<div class="gallo-detail-container">
+  @if (loading()) {
+    <div class="loading-spinner">
+      <mat-icon class="spinner">autorenew</mat-icon>
+      <p>Cargando...</p>
+    </div>
+  }
+
+  @if (!loading() && gallo()) {
+    <div class="detail-header">
+      <button mat-icon-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <h1 class="detail-title">
+        <mat-icon class="title-icon">pets</mat-icon>
+        {{ gallo()!.nombre }}
+      </h1>
+      <button mat-icon-button (click)="editGallo()" class="edit-button">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <div class="detail-content">
+      
+      @if (gallo()!.url_foto) {
+      <div class="photo-section">
+        <img [src]="gallo()!.url_foto" [alt]="gallo()!.nombre" class="gallo-photo">
+      </div>
+      }
+
+      <div class="info-section">
+        <h2 class="section-title">
+          <mat-icon>info</mat-icon>
+          Información Básica
+        </h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <mat-icon class="item-icon">qr_code</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Placa</span>
+              <span class="item-value">{{ gallo()!.placa }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">pets</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Nombre</span>
+              <span class="item-value">{{ gallo()!.nombre }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">wc</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Sexo</span>
+              <span class="item-value">{{ gallo()!.sexo }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">calendar_today</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Fecha de Nacimiento</span>
+              <span class="item-value">{{ gallo()!.fecha_nacimiento || 'No especificada' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2 class="section-title">
+          <mat-icon>visibility</mat-icon>
+          Características Físicas
+        </h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <mat-icon class="item-icon">palette</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Color</span>
+              <span class="item-value">{{ gallo()!.color || 'No especificado' }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">monitor_weight</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Peso</span>
+              <span class="item-value">{{ gallo()!.peso || 'No especificado' }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">straighten</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Talla</span>
+              <span class="item-value">{{ gallo()!.talla || 'No especificada' }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">colorize</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Color de Patas</span>
+              <span class="item-value">{{ gallo()!.color_patas || 'No especificado' }}</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <mat-icon class="item-icon">landscape</mat-icon>
+            <div class="item-content">
+              <span class="item-label">Tipo de Cresta</span>
+              <span class="item-value">{{ gallo()!.tipo_cresta || 'No especificado' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2 class="section-title">
+          <mat-icon>family_restroom</mat-icon>
+          Información Genealógica
+        </h2>
+        
+        @if (gallo()!.padre || gallo()!.madre) {
+        <div class="genealogy-grid">
+          @if (gallo()!.padre) {
+          <div class="parent-card">
+            <h3 class="parent-title">
+              <mat-icon>male</mat-icon>
+              Padre
+            </h3>
+            <app-item-resume-component [gallo]="gallo()!.padre!" />
+          </div>
+          }
+          
+          @if (gallo()!.madre) {
+          <div class="parent-card">
+            <h3 class="parent-title">
+              <mat-icon>female</mat-icon>
+              Madre
+            </h3>
+            <app-item-resume-component [gallo]="gallo()!.madre!" />
+          </div>
+          }
+        </div>
+        } @else {
+        <div class="no-genealogy">
+          <mat-icon>info_outline</mat-icon>
+          <p>No hay información genealógica disponible</p>
+        </div>
+        }
+      </div>
+
+    </div>
+  }
+
+  @if (!loading() && !gallo()) {
+    <div class="error-message">
+      <mat-icon class="error-icon">error_outline</mat-icon>
+      <h2>Gallo no encontrado</h2>
+      <p>No se pudo cargar la información del gallo.</p>
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Volver
+      </button>
+    </div>
+  }
+</div>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import {  MatCardModule } from '@angular/material/card';
 import { BallNumComponent } from '../ball-num-component/ball-num-component';
+import { Gallo } from '../../../../models/gallo.model';
 
 @Component({
   selector: 'app-item-resume-component',
@@ -10,5 +11,6 @@ import { BallNumComponent } from '../ball-num-component/ball-num-component';
   styleUrl: './item-resume-component.css',
 })
 export class ItemResumeComponent {
-
+  gallo = input<Gallo>();
+  showStats = input(false);
 }

@@ -10,6 +10,9 @@ import { ProfilePage } from './components/pages/account/profile-page/profile-pag
 import { PasswordChangePage } from './components/pages/account/password-change-page/password-change-page';
 import { PaymentMethodsPage } from './components/pages/account/payment-methods-page/payment-methods-page';
 import { SettingsPage } from './components/pages/account/settings-page/settings-page';
+import { GallosComponent } from './components/pages/home-page/gallos/gallos-component';
+import { GalloFormComponent } from './components/pages/home-page/gallos/gallo-form/gallo-form';
+import { GalloDetailComponent } from './components/pages/home-page/gallos/gallo-detail/gallo-detail';
 
 export const routes: Routes = [
     {
@@ -44,8 +47,20 @@ export const routes: Routes = [
             },
             {
 
-                path: 'ayuda',
-                component: AyudaComponent
+                path: 'gallos',
+                component: GallosComponent
+            },
+            {
+                path: 'gallos/new',
+                component: GalloFormComponent
+            },
+            {
+                path: 'gallos/edit/:placa',
+                component: GalloFormComponent
+            },
+            {
+                path: 'gallos/:placa',
+                component: GalloDetailComponent
             },
             {
                 path: 'account/profile',
