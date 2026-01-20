@@ -1,0 +1,180 @@
+/* Variables globales para modo claro */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --border-color: rgba(0, 0, 0, 0.12);
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --primary-color: #DC143C;
+  --primary-light: rgba(220, 20, 60, 0.05);
+}
+
+/* Tema claro */
+body.light-theme {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Variables para modo oscuro */
+body.dark-theme {
+  --bg-primary: #121212;
+  --bg-secondary: #0a0a0a;
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  --primary-color: #ff6b6b;
+  --primary-light: rgba(255, 107, 107, 0.1);
+  
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Estilos base aplicables a ambos temas */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Asegurar que todo el marco sea del color correcto */
+.dark-theme,
+.dark-theme .mat-drawer-container,
+.dark-theme .mat-drawer-content,
+.dark-theme mat-sidenav-container,
+.dark-theme mat-sidenav-content {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light-theme .mat-drawer-container,
+.light-theme .mat-drawer-content {
+  background-color: transparent;
+}
+
+/* Estilos para tarjetas y contenedores en ambos temas */
+.light-theme .mat-mdc-card,
+.dark-theme .mat-mdc-card,
+.light-theme .custom-table,
+.dark-theme .custom-table {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ajustes para inputs y formularios */
+.dark-theme .mat-mdc-form-field {
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .mat-mdc-text-field-wrapper {
+  background-color: var(--card-bg) !important;
+}
+
+.dark-theme .mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+/* Ajustes para tablas */
+.dark-theme .custom-table {
+  background: var(--card-bg) !important;
+}
+
+.dark-theme .custom-table td {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Contenedores blancos/oscuros */
+.light-theme [style*="background: white"],
+.light-theme .gallo-form,
+.light-theme .vacuna-form,
+.light-theme .detail-content,
+.light-theme .search-section,
+.light-theme .table-container,
+.light-theme .loading-message,
+.light-theme .empty-message,
+.light-theme .gallos-container,
+.light-theme .vacunas-container,
+.light-theme .gallo-form-container,
+.light-theme .vacuna-form-container {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme [style*="background: white"],
+.dark-theme .gallo-form,
+.dark-theme .vacuna-form,
+.dark-theme .detail-content,
+.dark-theme .search-section,
+.dark-theme .table-container,
+.dark-theme .loading-message,
+.dark-theme .empty-message,
+.dark-theme .gallos-container,
+.dark-theme .vacunas-container,
+.dark-theme .gallo-form-container,
+.dark-theme .vacuna-form-container {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ajustes para sombras */
+.dark-theme .gallo-card,
+.dark-theme .table-container,
+.dark-theme .detail-content,
+.dark-theme .gallo-form,
+.dark-theme .vacuna-form {
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Ajustes para textos secundarios */
+.dark-theme .item-label,
+.dark-theme .card-detail,
+.dark-theme .search-results p,
+.dark-theme .empty-message p {
+  color: var(--text-secondary) !important;
+}
+
+/* Ajustes para bordes */
+.dark-theme .form-section,
+.dark-theme .info-section,
+.dark-theme .gallo-card {
+  border-color: var(--border-color) !important;
+}
+
+/* Fondos alternativos */
+.dark-theme .info-item,
+.dark-theme .search-results {
+  background-color: var(--primary-light) !important;
+}
+
+/* Animación suave para el toggle */
+.theme-toggle {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
+}
+
+/* Ajustes específicos para Material components */
+.dark-theme .mat-mdc-dialog-container {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .mat-mdc-option {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-theme .mat-mdc-option:hover {
+  background-color: var(--primary-light) !important;
+}
+
+.dark-theme .mat-drawer {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}

@@ -16,9 +16,13 @@
 
   <span class="spacer"></span>
 
-  <!-- Acciones -->
-  <button mat-icon-button class="action-btn">
-    <mat-icon>notifications</mat-icon>
+  <!-- Toggle de tema -->
+  <button 
+    mat-icon-button 
+    class="action-btn theme-toggle"
+    (click)="toggleTheme()"
+    [matTooltip]="themeService.isDarkMode() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
+    <mat-icon>{{ themeService.isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
   </button>
 
 </mat-toolbar>

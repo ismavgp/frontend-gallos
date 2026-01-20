@@ -9,6 +9,10 @@
   font-size: 14px;
 }
 
+::ng-deep .search-field.mat-mdc-form-field {
+  margin-bottom: 0;
+}
+
 .search-icon {
   color: rgba(0, 0, 0, 0.54);
   margin-right: 8px;

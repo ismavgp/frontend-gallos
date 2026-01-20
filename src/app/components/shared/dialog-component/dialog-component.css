@@ -1,0 +1,176 @@
+.dialog-container {
+  min-width: 300px;
+  max-width: 500px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.dialog-icon-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px 24px 16px;
+}
+
+.dialog-icon {
+  font-size: 56px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-delete .dialog-icon {
+  color: #d32f2f;
+}
+
+.icon-error .dialog-icon {
+  color: #d32f2f;
+}
+
+.icon-warning .dialog-icon {
+  color: #f57c00;
+}
+
+.icon-alert .dialog-icon {
+  color: #1976d2;
+}
+
+.icon-info .dialog-icon {
+  color: #1976d2;
+}
+
+.icon-success .dialog-icon {
+  color: #388e3c;
+}
+
+.icon-confirm .dialog-icon {
+  color: #1976d2;
+}
+
+/* Modo oscuro - Iconos */
+.dark-theme .icon-delete .dialog-icon {
+  color: #ef5350;
+}
+
+.dark-theme .icon-error .dialog-icon {
+  color: #ef5350;
+}
+
+.dark-theme .icon-warning .dialog-icon {
+  color: #ffa726;
+}
+
+.dark-theme .icon-alert .dialog-icon {
+  color: #42a5f5;
+}
+
+.dark-theme .icon-info .dialog-icon {
+  color: #42a5f5;
+}
+
+.dark-theme .icon-success .dialog-icon {
+  color: #66bb6a;
+}
+
+.dark-theme .icon-confirm .dialog-icon {
+  color: #42a5f5;
+}
+
+.dialog-title {
+  margin: 0;
+  padding: 0 24px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  font-family: inherit;
+}
+
+.dialog-title.dialog-delete {
+  color: #d32f2f;
+}
+
+.dialog-title.dialog-error {
+  color: #d32f2f;
+}
+
+.dialog-title.dialog-warning {
+  color: #f57c00;
+}
+
+.dialog-title.dialog-alert {
+  color: #1976d2;
+}
+
+.dialog-title.dialog-info {
+  color: #1976d2;
+}
+
+.dialog-title.dialog-confirm {
+  color: #1976d2;
+}
+
+.dialog-title.dialog-success {
+  color: #388e3c;
+}
+
+/* Modo oscuro - Títulos */
+.dark-theme .dialog-title.dialog-delete {
+  color: #ef5350;
+}
+
+.dark-theme .dialog-title.dialog-error {
+  color: #ef5350;
+}
+
+.dark-theme .dialog-title.dialog-warning {
+  color: #ffa726;
+}
+
+.dark-theme .dialog-title.dialog-alert {
+  color: #42a5f5;
+}
+
+.dark-theme .dialog-title.dialog-info {
+  color: #42a5f5;
+}
+
+.dark-theme .dialog-title.dialog-confirm {
+  color: #42a5f5;
+}
+
+.dark-theme .dialog-title.dialog-success {
+  color: #66bb6a;
+}
+
+.dialog-content {
+  padding: 10px 24px 20px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: inherit;
+}
+
+.dark-theme .dialog-content {
+  color: var(--text-primary);
+}
+
+.dialog-content p {
+  margin: 0;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.dialog-actions {
+  padding: 8px 16px;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cancel-button {
+  min-width: 80px;
+}
+
+.confirm-button {
+  min-width: 80px;
+}

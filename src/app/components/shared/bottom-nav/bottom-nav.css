@@ -11,6 +11,13 @@
   z-index: 1000;
   padding: 6px 0 0 0;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.bottom-nav.dark-theme {
+  background-color: #1e1e1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* Navigation Item */
@@ -32,6 +39,10 @@
   position: relative;
 }
 
+.bottom-nav.dark-theme .nav-item {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* Icon Styling */
 .nav-icon {
   font-size: 22px !important;
@@ -39,6 +50,11 @@
   height: 22px;
   margin-bottom: 3px;
   transition: all 0.3s ease;
+  color: inherit;
+}
+
+.dark-theme .nav-icon {
+  color: inherit;
 }
 
 /* Label Styling */
@@ -50,6 +66,11 @@
   text-overflow: ellipsis;
   max-width: 90%;
   transition: all 0.3s ease;
+  color: inherit;
+}
+
+.dark-theme .nav-label {
+  color: inherit;
 }
 
 /* Active State */
@@ -73,6 +94,26 @@
 
 .nav-item.active:hover {
   color: #8B0000;
+}
+
+.bottom-nav.dark-theme .nav-item:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bottom-nav.dark-theme .nav-item.active {
+  color: #ff6b6b;
+}
+
+.bottom-nav.dark-theme .nav-item.active .nav-icon {
+  color: #ff6b6b;
+}
+
+.bottom-nav.dark-theme .nav-item.active .nav-label {
+  color: #ff6b6b;
+}
+
+.bottom-nav.dark-theme .nav-item.active:hover {
+  color: #ff8888;
 }
 
 /* Ripple effect on active */

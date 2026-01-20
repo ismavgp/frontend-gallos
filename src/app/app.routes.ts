@@ -3,6 +3,7 @@ import { LoginPage } from './components/pages/login-page/login-page';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { DashboardComponent } from './components/pages/home-page/dashboard-component/dashboard-component';
 import { VacunasComponent } from './components/pages/home-page/vacunas-component/vacunas-component';
+import { VacunaFormComponent } from './components/pages/home-page/vacunas-component/vacuna-form/vacuna-form';
 import { ReportesComponent } from './components/pages/home-page/reportes-component/reportes-component';
 import { AyudaComponent } from './components/pages/home-page/ayuda-component/ayuda-component';
 import { RegisterPage } from './components/pages/register-page/register-page';
@@ -40,6 +41,14 @@ export const routes: Routes = [
             {
                 path: 'vacunas',
                 component: VacunasComponent
+            },
+            {
+                path: 'vacunas/new',
+                component: VacunaFormComponent
+            },
+            {
+                path: 'vacunas/edit/:id',
+                component: VacunaFormComponent
             },
             {
                 path: 'reportes',

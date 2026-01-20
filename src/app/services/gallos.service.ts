@@ -20,7 +20,10 @@ export class GallosService {
       fecha_nacimiento: '2023-05-15',
       placa_padre: 'GAL-025',
       placa_madre: 'GAL-026',
-      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s'
+      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s',
+      peleas_ganadas: 15,
+      peleas_empatadas: 3,
+      peleas_perdidas: 2
     },
     {
       placa: 'GAL-002',
@@ -34,7 +37,10 @@ export class GallosService {
       fecha_nacimiento: '2023-03-20',
       placa_padre: 'GAL-015',
       placa_madre: 'GAL-018',
-      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s'
+      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s',
+      peleas_ganadas: 20,
+      peleas_empatadas: 1,
+      peleas_perdidas: 4
     },
     {
       placa: 'GAL-003',
@@ -48,7 +54,10 @@ export class GallosService {
       fecha_nacimiento: '2023-07-10',
       placa_padre: 'GAL-001',
       placa_madre: 'GAL-020',
-      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s'
+      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s',
+      peleas_ganadas: 8,
+      peleas_empatadas: 2,
+      peleas_perdidas: 5
     },
     {
       placa: 'GAL-004',
@@ -62,7 +71,10 @@ export class GallosService {
       fecha_nacimiento: '2023-04-05',
       placa_padre: 'GAL-012',
       placa_madre: 'GAL-013',
-      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s'
+      url_foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTtupsKggHLuAGNHLAWHGRnz6CRHD5W9a7_Q&s',
+      peleas_ganadas: 12,
+      peleas_empatadas: 4,
+      peleas_perdidas: 3
     },
     {
       placa: 'GAL-005',
@@ -76,7 +88,10 @@ export class GallosService {
       fecha_nacimiento: '2023-02-18',
       placa_padre: 'GAL-008',
       placa_madre: 'GAL-009',
-      url_foto: 'https://images.unsplash.com/photo-1598567362494-2764503d2d9f?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1598567362494-2764503d2d9f?w=400',
+      peleas_ganadas: 18,
+      peleas_empatadas: 2,
+      peleas_perdidas: 1
     },
     {
       placa: 'GAL-006',
@@ -90,7 +105,10 @@ export class GallosService {
       fecha_nacimiento: '2023-06-22',
       placa_padre: 'GAL-002',
       placa_madre: 'GAL-021',
-      url_foto: 'https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=400',
+      peleas_ganadas: 10,
+      peleas_empatadas: 3,
+      peleas_perdidas: 6
     },
     {
       placa: 'GAL-007',
@@ -104,7 +122,10 @@ export class GallosService {
       fecha_nacimiento: '2023-08-30',
       placa_padre: 'GAL-004',
       placa_madre: 'GAL-022',
-      url_foto: 'https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?w=400',
+      peleas_ganadas: 5,
+      peleas_empatadas: 1,
+      peleas_perdidas: 2
     },
     {
       placa: 'GAL-008',
@@ -118,7 +139,10 @@ export class GallosService {
       fecha_nacimiento: '2023-01-12',
       placa_padre: 'GAL-030',
       placa_madre: 'GAL-031',
-      url_foto: 'https://images.unsplash.com/photo-1594997780442-6f1c50c4e814?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1594997780442-6f1c50c4e814?w=400',
+      peleas_ganadas: 22,
+      peleas_empatadas: 0,
+      peleas_perdidas: 3
     },
     {
       placa: 'GAL-009',
@@ -132,7 +156,10 @@ export class GallosService {
       fecha_nacimiento: '2023-09-05',
       placa_padre: 'GAL-003',
       placa_madre: 'GAL-023',
-      url_foto: 'https://images.unsplash.com/photo-1555169062-013468b47731?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1555169062-013468b47731?w=400',
+      peleas_ganadas: 7,
+      peleas_empatadas: 2,
+      peleas_perdidas: 4
     },
     {
       placa: 'GAL-010',
@@ -146,7 +173,10 @@ export class GallosService {
       fecha_nacimiento: '2023-10-15',
       placa_padre: 'GAL-005',
       placa_madre: 'GAL-024',
-      url_foto: 'https://images.unsplash.com/photo-1623636163108-f2c66dc65c49?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1623636163108-f2c66dc65c49?w=400',
+      peleas_ganadas: 3,
+      peleas_empatadas: 0,
+      peleas_perdidas: 1
     },
     {
       placa: 'GAL-011',
@@ -160,7 +190,10 @@ export class GallosService {
       fecha_nacimiento: '2023-03-08',
       placa_padre: 'GAL-001',
       placa_madre: 'GAL-027',
-      url_foto: 'https://images.unsplash.com/photo-1612024782955-49b2a1f6d0e5?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1612024782955-49b2a1f6d0e5?w=400',
+      peleas_ganadas: 25,
+      peleas_empatadas: 2,
+      peleas_perdidas: 1
     },
     {
       placa: 'GAL-012',
@@ -174,7 +207,10 @@ export class GallosService {
       fecha_nacimiento: '2023-11-20',
       placa_padre: 'GAL-008',
       placa_madre: 'GAL-028',
-      url_foto: 'https://images.unsplash.com/photo-1603349206295-dde20617cb6a?w=400'
+      url_foto: 'https://images.unsplash.com/photo-1603349206295-dde20617cb6a?w=400',
+      peleas_ganadas: 4,
+      peleas_empatadas: 1,
+      peleas_perdidas: 0
     },
     {
       placa: 'GAL-013',

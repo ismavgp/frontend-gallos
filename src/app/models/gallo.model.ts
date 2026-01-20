@@ -11,4 +11,7 @@ export interface Gallo {
   placa_padre?: string;
   placa_madre?: string;
   url_foto?: string;
+  peleas_ganadas?: number;
+  peleas_perdidas?: number;
+  peleas_empatadas?: number;
 }

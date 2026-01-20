@@ -1,13 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { SearchComponent } from '../../../shared/common/search-component/search-component';
 
-import { ItemResumeComponent } from "../../../shared/common/item-resume-component/item-resume-component";
-import { ButtonComponent } from "../../../shared/common/button-component/button-component";
 
 @Component({
   selector: 'app-dashboard-component',
-  imports: [SearchComponent, MatIconModule, ItemResumeComponent, ButtonComponent],
+  imports: [ MatIconModule],
   templateUrl: './dashboard-component.html',
   styleUrl: './dashboard-component.css',
 })

@@ -6,6 +6,13 @@
   box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
   height: 56px;
   padding: 0 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header oscuro en modo oscuro */
+.dark-theme .header {
+  background: linear-gradient(135deg, #1a0000 0%, #2d0808 50%, #440a0a 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .user-btn {

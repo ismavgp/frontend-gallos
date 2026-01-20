@@ -12,11 +12,6 @@
         </app-search-component>
     </div>
 
-    @if (searchTerm()) {
-    <div class="search-results">
-        <p>Buscando: <strong>{{ searchTerm() }}</strong></p>
-    </div>
-    }
 
     <div class="actions-section">
         <app-button-component 
@@ -47,28 +42,17 @@
     @if (!loading() && filteredGallos().length > 0) {
     <div class="content-section">
       @for (gallo of filteredGallos(); track gallo.placa) {
-        <div class="gallo-card" (click)="onGalloClick(gallo.placa)">
-          @if (gallo.url_foto) {
-          <div class="card-photo">
-            <img [src]="gallo.url_foto" [alt]="gallo.nombre">
-          </div>
-          }
-          <div class="card-header">
-            <mat-icon class="card-icon">pets</mat-icon>
-            <span class="card-placa">{{ gallo.placa }}</span>
-          </div>
-          <h3 class="card-nombre">{{ gallo.nombre }}</h3>
-          <div class="card-details">
-            <span class="card-detail">
-              <mat-icon>wc</mat-icon>
-              {{ gallo.sexo }}
-            </span>
-            @if (gallo.color) {
-            <span class="card-detail">
-              <mat-icon>palette</mat-icon>
-              {{ gallo.color }}
-            </span>
-            }
+        <div class="gallo-card-wrapper">
+          <button 
+            mat-icon-button 
+            class="delete-button" 
+            color="warn"
+            matTooltip="Eliminar gallo"
+            (click)="onDeleteGallo($event, gallo)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div (click)="onGalloClick(gallo.placa)">
+            <app-item-resume-component [gallo]="gallo" [showStats]="true"></app-item-resume-component>
           </div>
         </div>
       }
