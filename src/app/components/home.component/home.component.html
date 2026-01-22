@@ -1,0 +1,37 @@
+
+
+<div class="home-container">
+  <app-header (userClick)="toggleSidebar()"></app-header>
+  
+  <div class="main-wrapper">
+    <app-sidebar [isOpen]="isSidebarOpen" (closeSidebar)="closeSidebar()"></app-sidebar>
+    
+    <main class="content" (click)="isSidebarOpen && closeSidebar()">
+      <section class="welcome-section">
+        <h1>Bienvenido</h1>
+        <p>Esta es tu página de inicio</p>
+      </section>
+      
+      <section class="cards-section">
+        <div class="card">
+          <h3>Estadísticas</h3>
+          <p>Visualiza tus datos principales</p>
+        </div>
+        <div class="card">
+          <h3>Actividad Reciente</h3>
+          <p>Últimas acciones realizadas</p>
+        </div>
+        <div class="card">
+          <h3>Notificaciones</h3>
+          <p>Mantente al día con las novedades</p>
+        </div>
+        <div class="card">
+          <h3>Configuración</h3>
+          <p>Personaliza tu experiencia</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <app-bottombar></app-bottombar>
+</div>

@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "gallos": {
+    "galleras": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,7 +25,6 @@
               }
             ],
             "styles": [
-              "src/material-theme.scss",
               "src/styles.css"
             ]
           },
@@ -57,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "gallos:build:production"
+              "buildTarget": "galleras:build:production"
             },
             "development": {
-              "buildTarget": "gallos:build:development"
+              "buildTarget": "galleras:build:development"
             }
           },
           "defaultConfiguration": "development"

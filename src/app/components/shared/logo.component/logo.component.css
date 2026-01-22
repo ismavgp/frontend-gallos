@@ -1,0 +1,30 @@
+.logo h2 {
+  margin: 0;
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--primary);
+  transition: color var(--transition-base, 0.3s ease);
+}
+
+.size-small {
+  font-size: var(--text-md, 1rem);
+}
+
+.size-medium {
+  font-size: var(--text-xl, 1.5rem);
+}
+
+.size-large {
+  font-size: var(--text-2xl, 2rem);
+}
+
+@media (max-width: 768px) {
+  .size-medium {
+    font-size: var(--text-lg, 1.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .size-medium {
+    font-size: var(--text-md, 1rem);
+  }
+}

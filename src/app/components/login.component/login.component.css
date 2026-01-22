@@ -1,0 +1,51 @@
+/* Estilos personalizados del login */
+
+.login-background {
+  background: linear-gradient(135deg, #7b7d85 0%, #29272b 100%);
+}
+
+.login-card {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--space-8) var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.login-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.login-title {
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-link {
+  color: #667eea;
+  transition: var(--transition);
+}
+
+.forgot-password-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.register-link {
+  color: #667eea;
+  transition: var(--transition);
+}
+
+.register-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}

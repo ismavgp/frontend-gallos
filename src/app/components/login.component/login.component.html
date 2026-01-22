@@ -1,0 +1,73 @@
+<div class="flex items-center justify-center h-screen login-background">
+    <div class="card login-card" style="width: 400px; max-width: 90%;">
+        <div class="login-header text-center">
+            <div class="flex flex-col items-center gap-3">
+                <img 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx9eyP3e8VgfnhFDrWRtf-rHOuskCH3blPfg&s" 
+                    alt="Logo" 
+                    class="login-logo">
+                <h2 class="mb-0 login-title">Iniciar Sesión</h2>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (errorMessage) {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    {{ errorMessage }}
+                </div>
+            }
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <app-input
+                    type="email"
+                    label="Correo"
+                    id="email"
+                    formControlName="email"
+                    placeholder="Ingresa tu correo"
+                    [icon]="emailIcon"
+                    [required]="true"
+                    [disabled]="isLoading">
+                </app-input>
+
+                <app-input
+                    type="password"
+                    label="Contraseña"
+                    id="password"
+                    formControlName="password"
+                    placeholder="Ingresa tu contraseña"
+                    [icon]="passwordIcon"
+                    [required]="true"
+                    [disabled]="isLoading">
+                </app-input>
+
+                <div class="flex items-center justify-between mb-4">
+                    <app-checkbox
+                        label="Recordarme"
+                        id="remember"
+                        formControlName="remember">
+                    </app-checkbox>
+                    <a href="#" class="text-sm forgot-password-link">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <app-button 
+                    type="submit" 
+                    variant="primary" 
+                    [block]="true"
+                    [disabled]="loginForm.invalid || isLoading">
+                    @if (isLoading) {
+                        <i class="fas fa-spinner fa-spin"></i>
+                        Ingresando...
+                    } @else {
+                        Ingresar
+                    }
+                </app-button>
+
+                <div class="text-center mt-4">
+                    <p class="text-sm text-muted">
+                        ¿No tienes cuenta? <a href="#" class="register-link font-semibold">Regístrate</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

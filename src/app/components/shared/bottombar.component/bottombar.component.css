@@ -1,0 +1,13 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr; /* 👈 CLAVE */
+
+  height: 56px;
+  background-color: var(--surface);
+}

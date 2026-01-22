@@ -1,0 +1,11 @@
+<label class="flex items-center cursor-pointer">
+  <input 
+    type="checkbox"
+    [id]="id"
+    [checked]="checked"
+    [disabled]="disabled"
+    (change)="onCheckboxChange($event)"
+    (blur)="onBlur()"
+    class="checkbox mr-2">
+  <span class="text-sm">{{ label }}</span>
+</label>

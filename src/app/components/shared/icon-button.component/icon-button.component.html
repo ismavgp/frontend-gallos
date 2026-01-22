@@ -1,0 +1,4 @@
+<button class="icon-button" [class]="'size-' + size" (click)="onClick()">
+  <i *ngIf="iconClass" [class]="iconClass" class="icon"></i>
+  <span *ngIf="!iconClass" class="icon">{{ icon }}</span>
+</button>

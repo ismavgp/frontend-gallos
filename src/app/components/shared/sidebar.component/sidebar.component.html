@@ -1,0 +1,13 @@
+<div class="sidebar-overlay" [class.open]="isOpen" (click)="close()"></div>
+<aside class="sidebar" [class.open]="isOpen">
+  <nav class="sidebar-nav">
+    <app-sidebar-nav-item
+      *ngFor="let item of menuItems; let i = index"
+      [iconClass]="item.iconClass"
+      [text]="item.text"
+      [active]="item.active || false"
+      [href]="item.href || '#'"
+      (itemClick)="onItemClick(i)">
+    </app-sidebar-nav-item>
+  </nav>
+</aside>
