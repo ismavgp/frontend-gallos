@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavItemComponent } from '../nav-item.component/nav-item.component';
+import { RouterLink } from "@angular/router";
 
 interface MenuItem {
   iconClass: string;
@@ -11,16 +12,17 @@ interface MenuItem {
 
 @Component({
   selector: 'app-bottombar',
-  imports: [CommonModule, NavItemComponent],
+  imports: [CommonModule, NavItemComponent, RouterLink],
   templateUrl: './bottombar.component.html',
   styleUrl: './bottombar.component.css',
 })
 export class BottombarComponent {
   menuItems: MenuItem[] = [
     { iconClass: 'fas fa-home', text: 'Inicio', active: true },
-    { iconClass: 'fas fa-box', text: 'Productos' },
-    { iconClass: 'fas fa-tools', text: 'Servicios' },
-    { iconClass: 'fas fa-phone', text: 'Contacto' },
+    { iconClass: 'fas fa-box', text: 'Gallos', href: 'gallos' },
+    { iconClass: 'fas fa-tools', text: 'Vacunas' , href: 'vacunas'},
+    { iconClass: 'fas fa-phone', text: 'Peleas', href: 'peleas' },
+    { iconClass: 'fas fa-phone', text: 'Entrenamientos', href: 'entrenamientos' },
   ];
 
   onItemClick(index: number) {

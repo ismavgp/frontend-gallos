@@ -4,7 +4,8 @@
     [iconClass]="item.iconClass"
     [text]="item.text"
     [active]="item.active || false"
-    [href]="item.href || '#'"
-    (itemClick)="onItemClick(i)">
+    [routerLink]="item.href || '#'"
+    (itemClick)="onItemClick(i)"
+  >
   </app-nav-item>
 </nav>

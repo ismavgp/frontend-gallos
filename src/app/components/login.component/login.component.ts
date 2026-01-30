@@ -33,7 +33,7 @@ export class LoginComponent {
     });
   }
 
-  async onSubmit(): Promise<void> {
+  onSubmit(): void {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -44,21 +44,19 @@ export class LoginComponent {
 
     const { email, password } = this.loginForm.value;
 
-    try {
-      // El AuthService espera username, no email
-      const success = await this.authService.login(email, password);
-      
-      if (success) {
+    this.authService.login({ email, password }).subscribe({
+      next: () => {
         console.log('Login successful - Redirecting to home...');
-        await this.router.navigate(['/home']);
-      } else {
-        this.errorMessage = 'Credenciales incorrectas. Intenta con admin / password';
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        this.errorMessage = 'Credenciales incorrectas o error del servidor. Intente nuevamente.';
+        console.error('Login error:', error);
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
       }
-    } catch (error) {
-      this.errorMessage = 'Error al iniciar sesión. Intenta nuevamente.';
-      console.error('Login error:', error);
-    } finally {
-      this.isLoading = false;
-    }
+    });
   }
 }
